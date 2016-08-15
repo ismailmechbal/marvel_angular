@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3>#{{storyDetail.story.data.results[0].id}} - {{storyDetail.story.data.results[0].title}}</h3>
+    </div>
+    <div class="panel-body" ng-init="getCharacters()">
+      <h3>{{storyDetail.story.data.results[0].description}}</h3>
+      <h3>Available characters</h3>
+      <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12" ng-repeat="(keyCharacter, valueCharacter) in storyDetail.characters">
+        <div class="character">
+          <h5>{{valueCharacter.data.results[0].name}}</h5>
+          <img ng-src="{{valueCharacter.data.results[0].thumbnail.path}}.{{valueCharacter.data.results[0].thumbnail.extension}}" class="img-rounded img-responsive character-picture">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
